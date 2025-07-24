@@ -41,7 +41,11 @@ app.get('/entity/:id', async (req, res) => {
     const entityId = req.params.id;
 
     const response = await fetch(`https://id.who.int/icd/entity/${entityId}`, {
-      headers: { Authorization: `Bearer ${token}`, Accept: 'application/json' },
+      headers: { 
+        Authorization: `Bearer ${token}`, 
+        Accept: 'application/json',
+        'API-Version': '2020-09'
+      },
     });
     const data = await response.json();
     res.json(data);
@@ -58,7 +62,11 @@ app.get('/entity-slim/:id', async (req, res) => {
     const entityId = req.params.id;
 
     const response = await fetch(`https://id.who.int/icd/entity/${entityId}`, {
-      headers: { Authorization: `Bearer ${token}`, Accept: 'application/json' },
+      headers: { 
+        Authorization: `Bearer ${token}`, 
+        Accept: 'application/json',
+        'API-Version': '2020-09'
+      },
     });
     const fullData = await response.json();
 
@@ -86,7 +94,11 @@ app.get('/search', async (req, res) => {
 
     const url = `https://id.who.int/icd/release/11/${release}/${linearization}/search?q=${encodeURIComponent(term)}`;
     const response = await fetch(url, {
-      headers: { Authorization: `Bearer ${token}`, Accept: 'application/json' },
+      headers: { 
+        Authorization: `Bearer ${token}`, 
+        Accept: 'application/json',
+        'API-Version': '2020-09'
+      },
     });
     const data = await response.json();
     res.json(data);
