@@ -1,0 +1,14 @@
+{
+  "name": "icd-proxy",
+  "version": "1.0.0",
+  "description": "Proxy para acessar a API ICD-11 da OMS com token automático.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.0",
+    "node-fetch": "^3.3.2"
+  }
+}
